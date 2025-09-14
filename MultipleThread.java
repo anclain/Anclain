@@ -13,10 +13,10 @@ public class MultipleThread {                    //进行多线程操作
                     if(counter%2 == 0){
                         System.out.println(counter);
                         counter++;
-                        lock.notify();
+                        lock.notify();        //激活另一个线程
                     }else{
                         try {
-                            lock.wait();
+                            lock.wait();       //线程锁定
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -46,5 +46,6 @@ public class MultipleThread {                    //进行多线程操作
         t2.start();
     }
 }
+
 
 
