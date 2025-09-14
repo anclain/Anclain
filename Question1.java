@@ -10,14 +10,14 @@ public class Question1 {
     public static String plus(String a, String b) {
         int len = Math.max(a.length(), b.length());
 
-        int[] la = new int[len];
+        int[] la = new int[len];                //初始化数组
         int[] lb = new int[len];
         int[] result = new int[len+1];
         Arrays.fill(la,0);
         Arrays.fill(lb,0);
         Arrays.fill(result,0);
 
-        String[] oa = a.split("");
+        String[] oa = a.split("");             //改为字符串数组
         String[] ob = b.split("");
         for (int i = 0; i < len; i++) {
             if (i < a.length()) {
@@ -28,7 +28,7 @@ public class Question1 {
             }
         }
 
-        int over = 0;
+        int over = 0;                             //进行位数加法
         for(int i = 0; i < la.length; i++){
             int sum = la[i]+lb[i]+over;
             result[i] = sum%10;
@@ -37,7 +37,7 @@ public class Question1 {
             result[len] = over;
         }
 
-        StringBuffer sb = new StringBuffer();
+        StringBuffer sb = new StringBuffer();         //连接各个位上的数字
         boolean flag = false;
         for(int i = len; i >= 0; i--){
             if(!flag){
@@ -54,3 +54,4 @@ public class Question1 {
         return sb.toString();
     }
 }
+
