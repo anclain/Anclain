@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Question4 {
-    private static int[] root,size;
+    private static int[] root,size;      //定义每个人的团队代表人员与团队大小
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);           
         int n = sc.nextInt();
         int m = sc.nextInt();
 
@@ -29,23 +29,23 @@ public class Question4 {
 
             if (size[find(a)] == n) {
                 System.out.println(i);
-                flag = true;
+                flag = true;                     //如果全部并入一个团体则输出操作完成全部合并的最后一次操作
                 break;
             }
         }
         if(!flag){
-            System.out.println("-1");
+            System.out.println("-1");           //如果没有完成全部并入一个团队则返回-1
         }
     }
 
-    private static int find(int i){
+    private static int find(int i){                  //定义通过递归寻找团队代表的方法
         if(i == root[i]){
             return i;
         }
         return root[i] = find(root[i]);
     }
 
-    private static void combine(int i, int j){
+    private static void combine(int i, int j){            //定义团队混合操作
         int rooti =  find(i);
         int rootj =  find(j);
 
@@ -60,3 +60,4 @@ public class Question4 {
         }
     }
 }
+
