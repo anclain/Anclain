@@ -1,7 +1,7 @@
 package EntryTest;
 
 
-public class Question3 {
+public class Question3 {             //找寻丑陋字符串
     public static long ugly(int N){
         int len = N;
         long all = (long)Math.pow(2, len);
@@ -17,3 +17,4 @@ public class Question3 {
         return (all - arr[len][1] - arr[len][0] + 1000000007) % 1000000007;
     }
 }
+
