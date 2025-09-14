@@ -38,6 +38,7 @@ public class Question5 {
                     }
                 }
             }
+            
             for(int j = 0; j < layers; j++) {
                 if(j < layers - 1) {
                     if(!visited[j]) {
@@ -57,4 +58,5 @@ public class Question5 {
 
     }
 }
+
 
