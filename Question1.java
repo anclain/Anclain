@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Question1 {
+public class Question1 {           //进行大数运算
     public static String plus(String a, String b) {
         int len = Math.max(a.length(), b.length());
 
@@ -54,4 +54,5 @@ public class Question1 {
         return sb.toString();
     }
 }
+
 
