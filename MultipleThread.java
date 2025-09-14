@@ -10,7 +10,7 @@ public class MultipleThread {                    //进行多线程操作
         Thread t1 = new Thread(() -> {         //线程1
             synchronized (lock) {
                 while(counter <= 100) {
-                    if(counter%2 == 0){
+                    if(counter%2 == 0){        //打印偶数
                         System.out.println(counter);
                         counter++;
                         lock.notify();        //激活另一个线程
@@ -28,7 +28,7 @@ public class MultipleThread {                    //进行多线程操作
         Thread t2 = new Thread(() -> {             //线程2
             synchronized (lock) {
                 while(counter <= 100) {
-                    if(counter%2 == 1){
+                    if(counter%2 == 1){           //打印奇数
                         System.out.println(counter);
                         counter++;
                         lock.notify();
@@ -46,6 +46,7 @@ public class MultipleThread {                    //进行多线程操作
         t2.start();
     }
 }
+
 
 
 
