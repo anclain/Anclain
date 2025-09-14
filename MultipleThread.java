@@ -2,7 +2,7 @@ package EntryTest;
 
 import com.sun.source.doctree.SystemPropertyTree;
 
-public class MultipleThread {
+public class MultipleThread {                    //进行多线程操作
     private static final Object lock = new Object();      //定义锁与计数器
     private static int counter = 1;
 
@@ -46,4 +46,5 @@ public class MultipleThread {
         t2.start();
     }
 }
+
 
