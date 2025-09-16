@@ -1,20 +1,22 @@
 package EntryTest;
 
 import java.util.*;
+import java.util.Scanner;
 
 public class WordCount {
 
     public static void main(String[] args) {
-        String line = "In the deep velvet canvas of the cosmos, where nebulae bloom like cosmic flowers and silent planets drift in their ancient orbits, a breathtaking tapestry of light and shadow unfolds—a reminder of our place in an endless, awe-inspiring story.";
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
         List<String> apply = renew(line);
-        HashMap<String, Integer> map = new HashMap<>();
+        HashMap<String, Integer> map = new HashMap<>();                   //将词组数据放入HashMap中
         for (String word : apply) {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
         String [] words = map.keySet().toArray(new String[0]);
 
         List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
-        list.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+        list.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));                //通过HashMap中的value值进行倒叙排列
 
         for(int i = 0; i < 3; i++){
             System.out.print(list.get(i).getKey() + " ");
@@ -22,8 +24,8 @@ public class WordCount {
         }
     }
 
-    public static List<String> renew(String line){
-        String clean = line.replaceAll("[^a-zA-Z0-9 ]", " ").trim();
+    public static List<String> renew(String line){               //定义题词工具，去除其他符号
+        String clean = line.replaceAll("[^a-zA-Z0-9 ]", " ").trim();             
         String[] words = clean.split(" +");
         List<String> list = new ArrayList<>();
         for (String word : words) {
@@ -33,3 +35,4 @@ public class WordCount {
         return list;
     }
 }
+
