@@ -16,10 +16,10 @@ public class ActiveReflection {
             Method printM = myClass.getDeclaredMethod("print");
             printM.invoke(instance);
         }catch (Exception e) {
-            // 这一个 catch 块就能捕获所有异常
             System.out.println("在执行反射操作时发生错误。");
-            e.printStackTrace(); // 打印详细的错误堆栈信息
+            e.printStackTrace(); 
         }
         sc.close();
     }
 }
+
